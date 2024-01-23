@@ -15,7 +15,7 @@ pipeline {
 
     stage('Docker_image') {
       steps {
-        sh 'docker build -t image1 .'
+        sh 'docker build -t maraskar/image1:$BUILD_NUMBER .'
       }
     }
 
