@@ -19,5 +19,13 @@ pipeline {
       }
     }
 
+    stage('docker_push') {
+      steps {
+        sh '''echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin docker.io
+
+docker push maraskar/image1:$BUILD_NUMBER'''
+      }
+    }
+
   }
 }
